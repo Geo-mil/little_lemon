@@ -1,6 +1,9 @@
-function Main({children}) {
+function Main() {
     return <main>
-        {children}
+        <div className="hero">Hero</div>
+        <div className="specials">Specials</div>
+        <div className="testimonials">Testimonials</div>
+        <div className="about">About</div>
     </main>
 }
 

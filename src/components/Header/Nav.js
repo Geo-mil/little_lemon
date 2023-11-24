@@ -1,6 +1,7 @@
-function Nav() {
+function Nav({children}) {
     return <nav>
         <ul>
+            {children && <h2>{children}</h2>}
             <li><a href="/">Home</a></li>
             <li><a href="/">About</a></li>
             <li><a href="/">Menu</a></li>
