@@ -1,9 +1,8 @@
 body {
-
+    text-align: center;
 }
 
 header, footer {
-    display: flex;
     flex-direction: column;
     align-items: center;
     background-color: white;
@@ -12,15 +11,49 @@ header, footer {
     color: #333333;
 }
 
-main {
-
+/* Tiltes */
+h1 {
+    font-family: Markazi Text, serif;
+    font-size: 64pt;
 }
 
-footer {
-    padding: 20px;
-    height: auto;
-    justify-content: center;
-    align-items: normal;
+/* Sub titles */
+h2 {
+    font-family: Markazi Text, serif;
+    font-size: 40pt;
+}
+
+/* Section title */
+h3 {
+    font-family: Karla, sans-serif;
+    font-size: 20pt;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+/* Card title */
+h4 {
+    font-family: Karla, sans-serif;
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+/* paragraph text */
+p {
+    font-family: Karla, sans-serif;
+    font-size: 16pt;
+    font-weight: normal;
+}
+
+/* paragraph text */
+span {
+    font-family: Karla, sans-serif;
+    font-size: 16pt;
+    font-weight: normal;
+}
+
+main {
+
 }
 
 a {
@@ -48,12 +81,9 @@ header nav {
     justify-content: center;
 }
 
-footer nav {
-    display: block;
-}
-
 @media screen and (min-width: 600px) {
     header, footer {
+        display: flex;
         flex-direction: row;
         justify-content: center;
     }
