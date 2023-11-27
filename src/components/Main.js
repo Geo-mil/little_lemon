@@ -1,9 +1,15 @@
+import HomePage from "./HomePage"
+import BookingPage from "./BookingPage"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 function Main() {
     return <main>
-        <div className="hero">Hero</div>
-        <div className="specials">Specials</div>
-        <div className="testimonials">Testimonials</div>
-        <div className="about">About</div>
+        <Router>
+            <Routes>
+                <Route path="/" element={<HomePage />}></Route>
+                <Route path="/booking" element={<BookingPage />}></Route>
+            </Routes>
+        </Router>
     </main>
 }
 
