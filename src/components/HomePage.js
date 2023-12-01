@@ -5,7 +5,7 @@ import Testimonials from "./Testimonials/Testimonials"
 
 function HomePage() {
     return <>
-        <div className="hero">{<Hero />}</div>
+        <div>{<Hero />}</div>
         <div className="specials">{<Specials />}</div>
         <div className="testimonials">{<Testimonials />}</div>
         <div className="about">{<About/>}</div>
