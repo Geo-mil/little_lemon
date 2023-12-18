@@ -1,0 +1,31 @@
+/* About.css */
+.about-container {
+    display: flex;
+    height: auto;
+    width: 100%;
+  }
+
+  .about-text {
+    width: 40%; /* Ensure the text container takes full width on smaller screens */
+  }
+
+  .about-text p {
+    color: #333333;
+  }
+
+  .photos {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .photos img {
+    max-width: 50%;
+    height: auto;
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+  }
+
+  @media (max-width: 600px) {
+    .photos {
+      display: none; /* Hide photos on screens smaller than 600px */
+    }
+  }

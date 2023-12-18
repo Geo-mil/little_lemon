@@ -1,0 +1,48 @@
+/* Testimony.css */
+.testimonials {
+    background-color: #495e57;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Allow testimonies to wrap to the next line */
+    justify-content: space-around; /* Center testimonies horizontally */
+}
+
+.testimony {
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    max-width: 250px; /* Set a maximum width for each testimony */
+    height: 300px; /* Set a maximum height for each testimony */
+    overflow: hidden; /* Clip any content that overflows */
+    white-space: normal; /* Allow text to wrap onto multiple lines */
+    text-overflow: ellipsis; /* Display an ellipsis (...) for any overflowed text */
+}
+
+.testimony img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.testimonySection h1 {
+    color: #f4ce14;
+    margin: 0;
+}
+
+.testimony h3 {
+    color: #edefee;
+    margin: 0;
+}
+
+.testimony .rating {
+    color: gold;
+}
+
+.testimony p {
+    margin: 10px 0;
+}
+
