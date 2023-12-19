@@ -1,31 +1,50 @@
-/* About.css */
 .about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+    margin: 3vw;
+    padding-bottom: 20px;
+    border-bottom: 15px solid #495E57;
+  }
+
+  .about_cell {
     display: flex;
-    height: auto;
-    width: 100%;
+    justify-content: center;
   }
 
-  .about-text {
-    width: 40%; /* Ensure the text container takes full width on smaller screens */
+  .about-container .text {
+    margin: 10%;
+    text-align: left;
   }
 
-  .about-text p {
+  .about-container h1 {
     color: #333333;
+    margin: 0;
+  }
+
+  .about-container p {
+    max-width: 340px;
+    margin-top: 20px;
+    color: #333333;
+    text-align: left;
   }
 
   .photos {
     position: relative;
-    overflow: hidden;
   }
 
-  .photos img {
-    max-width: 50%;
+  .about-container img {
+    width: 100%;
     height: auto;
-    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+    border-radius: 16px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   }
 
   @media (max-width: 600px) {
+    .about-container {
+        grid-template-columns: 1fr
+    }
     .photos {
-      display: none; /* Hide photos on screens smaller than 600px */
+        display: none;
     }
   }

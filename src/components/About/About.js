@@ -1,12 +1,12 @@
 import MarioAndAdrian from "../../assets/Mario and Adrian A.jpg"
-import AdrianAndMario from "../../assets/Mario and Adrian b.jpg"
 import "./About.css"
 
 const About = () => {
     return (
         <div className="about-container">
-          <h1>About us</h1>
+          <div className='about_cell'>
           <div className="about-text">
+            <h1>About us</h1>
             <p>
               Welcome to Little Lemon,
               where passion meets the plate in the heart of Chicago!
@@ -23,8 +23,11 @@ const About = () => {
               culinary masterpieces that dance on your palate.
             </p>
           </div>
+          </div>
+          <div className='about_cell'>
           <div className="photos">
             <img src={MarioAndAdrian} alt="Mario and Adrian" />
+          </div>
           </div>
         </div>
       )
