@@ -9,9 +9,9 @@ function Main() {
         <Router>
             <Routes>
                 <Route path="/" element={<HomePage />}></Route>
-                <Route path="/menu" element={<MenuPage />}></Route>
-                <Route path="/booking" element={<BookingPage />}></Route>
-                <Route path="/orderOnline" element={<OrderOnlinePage />}></Route>
+                <Route path="/MenuPage" element={<MenuPage />}></Route>
+                <Route path="/BookingPage" element={<BookingPage />}></Route>
+                <Route path="/OrderOnlinePage" element={<OrderOnlinePage />}></Route>
             </Routes>
         </Router>
     </main>

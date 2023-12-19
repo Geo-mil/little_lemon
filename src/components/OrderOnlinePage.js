@@ -1,6 +1,7 @@
-const BookingPage = () => {
+const OrderOnlinePage = () => {
     return <>
+    <h1 style={{color: "black"}}>Order</h1>
     </>
 }
 
-export default BookingPage
+export default OrderOnlinePage
