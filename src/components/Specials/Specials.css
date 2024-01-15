@@ -1,11 +1,12 @@
 .specials {
     padding: 2vw;
 }
+
 .specials_top {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 30px;
-    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 3vw;
 }
 
 .specials_cards {
@@ -45,8 +46,7 @@
 
 @media (max-width: 600px) {
     .specials_top {
-        grid-template-columns: 1fr;
-        margin-top: 0%;
+        flex-direction: column;
     }
 
     .specials_cards {

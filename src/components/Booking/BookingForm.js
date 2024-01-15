@@ -1,20 +1,25 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const BookingForm = () => {
+const BookingForm = (props) => {
+  const navigate = useNavigate()
   // Define state variables for form fields
-  const [date, setDate] = useState('');
+  const [date, setDate] = useState(new Date());
   const [time, setTime] = useState('17:00'); // Set a default time
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState('Birthday');
 
   // Define state variable for available times
-  const [availableTimes] = useState([
-    '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'
-  ]);
+  // const [availableTimes] = useState([
+  //   '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'
+  // ]);
+
+  const [availableTimes] = [props.props.props.state]
 
   // Event handlers to update state
   const handleDateChange = (event) => {
     setDate(event.target.value);
+    props.props.props.changeTimes(event.target.value)
   };
 
   const handleTimeChange = (event) => {
@@ -32,10 +37,15 @@ const BookingForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Add your reservation logic here
+    if (props.props.props.sendForm()){
+          navigate('/ConfirmedBooking')
+    } else {
+          window.alert('Booking submission failed. Please try again.');
+    }
   };
 
   return (
-    <form style={{ display: 'grid', maxWidth: '200px', gap: '20px' }} onSubmit={handleSubmit}>
+    <form style={{ display: 'grid', maxWidth: '200px', gap: '20px', }} onSubmit={handleSubmit}>
       <label htmlFor="res-date">Choose date</label>
       <input type="date" id="res-date" value={date} onChange={handleDateChange} />
 
@@ -55,7 +65,7 @@ const BookingForm = () => {
         <option value="Anniversary">Anniversary</option>
       </select>
 
-      <input type="submit" value="Make Your reservation" />
+      <button type="submit"> Make Your reservation </button>
     </form>
   );
 };

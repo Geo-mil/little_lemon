@@ -1,0 +1,7 @@
+.booking {
+    display: flex;
+    justify-content: center;
+    background-color: #495e49;
+    color: white;
+    padding: 20px;
+}

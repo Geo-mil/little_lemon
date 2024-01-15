@@ -1,3 +1,15 @@
 .App {
   text-align: center;
 }
+
+button {
+  padding: 10px 20px; /* Adjust padding to control button size */
+  background-color: #f4ce14; /* Yellow background color */
+  border: none;
+  border-radius: 16px;
+  font-size: 16px;
+  color: #495e57; /* White text color, adjust as needed */
+  cursor: pointer;
+  width: fit-content; /* Allow the button to adjust its width based on content */
+  height: fit-content;
+}

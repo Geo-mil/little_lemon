@@ -1,9 +1,10 @@
 import BookingForm from "./BookingForm"
+import './Booking.css'
 
-const BookingPage = () => {
-    return <>
-    <BookingForm />
-    </>
+const BookingPage = (props) => {
+    return <div className="booking">
+    <BookingForm props={props} />
+    </div>
 }
 
 export default BookingPage
