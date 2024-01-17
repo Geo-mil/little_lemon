@@ -1,41 +1,39 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
+import { BrowserRouter as Router } from 'react-router-dom'; // Import the Router
+import '@testing-library/jest-dom/extend-expect'; // for better matching
+
 import BookingForm from './BookingForm';
 
-describe('BookingForm', () => {
-  test('should update date state when date input is changed', () => {
-    render(<BookingForm />);
-    const dateInput = screen.getByLabelText('Choose date');
-    fireEvent.change(dateInput, { target: { value: '2022-01-01' } });
-    expect(dateInput.value).toBe('2022-01-01');
-  });
+describe('BookingForm Component', () => {
+  test('initial availableTimes is populated and updates when selecting a date', () => {
+    const initialState = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
 
-  test('should update time state when time select is changed', () => {
-    render(<BookingForm />);
-    const timeSelect = screen.getByLabelText('Choose time');
-    fireEvent.change(timeSelect, { target: { value: '18:00' } });
-    expect(timeSelect.value).toBe('18:00');
-  });
+    // Mock the props
+    const props = {
+      props: {
+        props: {
+          state: initialState,
+          changeTimes: jest.fn(),
+          sendForm: jest.fn(),
+        },
+      },
+    };
 
-  test('should update guests state when guests input is changed', () => {
-    render(<BookingForm />);
-    const guestsInput = screen.getByLabelText('Number of guests');
-    fireEvent.change(guestsInput, { target: { value: '5' } });
-    expect(guestsInput.value).toBe('5');
-  });
+    // Render the BookingForm with the mocked props
+    render(<Router><BookingForm {...props} /></Router>);
 
-  test('should update occasion state when occasion select is changed', () => {
-    render(<BookingForm />);
-    const occasionSelect = screen.getByLabelText('Occasion');
-    fireEvent.change(occasionSelect, { target: { value: 'Anniversary' } });
-    expect(occasionSelect.value).toBe('Anniversary');
-  });
+    // Assert that the initial availableTimes is populated
+    initialState.forEach((time) => {
+      expect(screen.getByText(time)).toBeInTheDocument();
+    });
 
-  test('should call handleSubmit when submit button is clicked', () => {
-    const handleSubmit = jest.fn();
-    render(<BookingForm onSubmit={handleSubmit} />);
-    const submitButton = screen.getByText('Make Your reservation');
-    fireEvent.click(submitButton);
-    expect(handleSubmit).toHaveBeenCalledTimes(1);
+    // Simulate changing the date
+    const newDate = '2024-12-25';
+    fireEvent.change(screen.getByLabelText('Choose date'), { target: { value: newDate } });
+
+    // Assert that the changeTimes function was called with the new date
+    expect(props.props.props.changeTimes).toHaveBeenCalledWith(newDate);
+
   });
 });
