@@ -30,7 +30,7 @@ const Specials = () => {
     return<>
     <div className='specials_top'>
         <h1>Specials</h1>
-        <button>Online Menu</button>
+        <button aria-label='Online Menu'>Online Menu</button>
     </div>
     <div className='specials_cards'>
         {plates.map((item) => {
