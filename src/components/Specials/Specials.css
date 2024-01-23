@@ -41,7 +41,14 @@
 
 .card a {
     padding: 10px;
-    color: black;
+    color: #495e57;
+    text-decoration: underline;
+    transition: color 0.3s; /* Add a smooth transition effect for color */
+
+    /* Add styles for when the link is active (clicked) */
+    &:hover {
+        color: #ee9972; /* Change the color when the link is active (clicked) */
+    }
 }
 
 @media (max-width: 600px) {

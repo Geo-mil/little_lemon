@@ -12,4 +12,11 @@ button {
   cursor: pointer;
   width: fit-content; /* Allow the button to adjust its width based on content */
   height: fit-content;
+  transition: background-color 0.3s; /* Add a smooth transition effect for background-color */
+
+  /* Add styles for when the button is pressed */
+  &:active {
+    background-color: #ee9972; /* Change the background color when the button is pressed */
+    color: #fbdabb; /* Change the text color when the button is pressed */
+  }
 }
